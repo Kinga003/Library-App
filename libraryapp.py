@@ -4,7 +4,7 @@ Created on Thu Mar 28 20:12:53 2024
 
 @author: kinga
 """
-
+# import packages
 import tkinter as tk
 from tkinter import messagebox
 
@@ -56,7 +56,7 @@ class LibraryApp:
         self.buttonLoadLibrary.grid(row=2, column=2, padx=5, pady=5)
         
         self.books = []
-
+# add book
     def addBook(self):
         """
         funkcja dodająca książkę do listy
@@ -89,7 +89,7 @@ class LibraryApp:
         self.listBox.delete(0, tk.END)
         for book in self.books:
             self.listBox.insert(tk.END, f"author: {book['author']}, title: {book['title']}")
-            
+    # borrow book
     def borrowBook(self):
         """
         Funkcja wypożyczania książki
@@ -126,7 +126,7 @@ class LibraryApp:
                 messagebox.showinfo("sukces", "poprawnie zapisano biblioteke")
         except Exception as e:
             messagebox.showerror("Błąd", f"Błąd podczas zapisu {e}")
-            
+   # library         
     def loadLibrary(self):
         """
         Wczystywaie bazy z pliku tekstowego do listy
